@@ -36,17 +36,53 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        Foundation models and large language models (LLMs) represent a transformative advancement in healthcare and biomedical research, offering a new paradigm for understanding complex health systems. These large-scale models are pretrained on extensive datasets encompassing various health data types, enabling them to perform a wide range of tasks such as disease prediction, medical image analysis, and health monitoring.
+        Healthcare is experiencing a transformative moment as foundation models demonstrate unprecedented capabilities in processing and integrating diverse medical data modalities. Despite significant advances in computer vision, natural language processing, and signal processing for healthcare applications, the translation of these technologies from research laboratories to clinical practice remains fragmented and challenging. This workshop addresses the critical gap between cutting-edge multimodal foundation model research and real-world clinical deployment.
       </p>
       <p>
-        Despite these advances, most existing foundation models and LLMs in healthcare focus on a single modality, such as medical images, electronic health records, or genomic data. However, human health is inherently multimodal, with complex interactions spanning different physiological systems and data types.
+        Our workshop focuses on the development, validation, and implementation of foundation models that can seamlessly integrate heterogeneous health signals, including medical imaging (CT, MRI, X-ray, pathology), physiological time series (ECG, EEG, vital signs), clinical text (electronic health records, clinical notes), genomic data, and wearable sensor streams. We aim to foster collaboration between machine learning researchers, clinical practitioners, regulatory experts, and industry partners to accelerate the responsible deployment of these technologies in healthcare settings.
       </p>
       <p>
-        To address these limitations, there is a growing need for multimodal foundation models that can effectively integrate and reason over diverse health signals. These models need to align heterogeneous data types, handle missing or noisy modalities, and support clinically meaningful interpretations.
+        The workshop will explore three critical dimensions:
       </p>
+      <ol>
+        <li><strong>Technical Innovation:</strong> advancing architectures and training paradigms for health-specific multimodal models;</li>
+        <li><strong>Clinical Validation:</strong> establishing robust evaluation frameworks that align with clinical endpoints and regulatory requirements; and</li>
+        <li><strong>Translational Challenges:</strong> addressing practical barriers including data privacy, equity and fairness, model interpretability, computational constraints, and integration with existing clinical workflows.</li>
+      </ol>
       <p>
-        This workshop will bring together researchers working at the intersection of multimodal learning, foundation models, LLMs, and healthcare to discuss recent advancements, explore methodological innovations, and identify key challenges in designing multimodal foundation models for health signals.
+        Recent advances demonstrate the potential impact: Med-PaLM 2 achieved expert-level performance on medical licensing exams [Singhal et al., 2023, 2025], whilst BiomedCLIP showed strong zero-shot capabilities across diverse biomedical tasks [Zhang et al., 2023]. However, critical challenges remain: catastrophic forgetting in continual learning settings, distribution shifts between institutions, and the need for uncertainty quantification in clinical decisions [Angelopoulos & Bates, 2023]. Our workshop will address these fundamental technical challenges whilst maintaining focus on clinical applicability.
       </p>
+    </section>
+
+    <section id="key-challenges">
+      <h2>Key Technical Challenges and Topics</h2>
+      <p>The workshop will address several critical technical problems that currently limit the deployment of multimodal foundation models in healthcare:</p>
+      <ol>
+        <li>
+          <strong>Multimodal alignment and fusion:</strong> How can we effectively align representations across fundamentally different modalities (3D volumetric imaging, irregular time series, unstructured text)? Recent work explores different fusion strategies, but optimal architectures remain unclear [Moor et al., 2023].
+        </li>
+        <li>
+          <strong>Few-shot and zero-shot generalisation:</strong> Clinical applications often involve rare diseases with limited training data. Can we leverage foundation model pretraining for effective few-shot learning? Works like CLIP-driven Universal Model [Liu et al., 2023] show promise, but performance gaps remain significant.
+        </li>
+        <li>
+          <strong>Temporal reasoning:</strong> Healthcare data is inherently temporal, from disease progression in imaging to vital sign trends. How do we incorporate temporal dynamics into foundation models? TimeGPT [Garza & Mergenthaler-Canseco, 2023] and similar approaches need adaptation for irregular medical time series.
+        </li>
+        <li>
+          <strong>Uncertainty quantification:</strong> Clinical deployment requires reliable uncertainty estimates. How can we provide calibrated uncertainties in multimodal settings? Recent work on conformal prediction [Angelopoulos & Bates, 2023] offers promising directions.
+        </li>
+        <li>
+          <strong>Computational efficiency:</strong> Hospital deployment requires models that can run on limited hardware. Can we achieve foundation model capabilities with efficient architectures? Techniques like LoRA [Hu et al., 2021] and quantisation need validation in medical contexts.
+        </li>
+        <li>
+          <strong>Handling missing modalities:</strong> In real-world applications, one or more modalities are often missing. How to design encoders and fusion modules to gracefully degrade when modalities are absent? How to impute the missing modalities? Should we impute the missing modalities or can missingness itself be informative? Recent work [Zhang et al., 2022] addresses these challenges by developing task-aware patient similarity metrics, but we still need methods that capture both local (within-modality) and global (cross-modality) similarity relationships.
+        </li>
+        <li>
+          <strong>Domain adaptation with small data:</strong> Healthcare institutions often have limited labelled data for specific conditions or populations. How can we effectively adapt foundation models to new clinical domains with minimal data? This includes addressing distribution shifts across different hospitals, patient demographics, and imaging protocols whilst maintaining model performance.
+        </li>
+        <li>
+          <strong>Privacy-aware training strategies:</strong> Medical data is highly sensitive and subject to strict privacy regulations. How can we train and fine-tune multimodal foundation models whilst preserving patient privacy? This encompasses federated learning approaches, differential privacy techniques, and secure multi-party computation methods that enable collaborative model development without requiring the sharing of raw patient data.
+        </li>
+      </ol>
     </section>
 
     <section id="topics">
@@ -68,7 +104,7 @@
       <h2>Workshop Information</h2>
       <div class="card">
         <p><strong>In-person workshop at EurIPS 2025</strong></p>
-        <p><strong>Date:</strong> December 13 or December 14, 2025</p>
+        <p><strong>Date:</strong> December 6 or 7, 2025 (one-day workshop)</p>
         <p><strong>Time:</strong> 8:30 AM -- 5:40 PM</p>
         <p><strong>Location:</strong> Vienna International Centre, Austria</p>
         <p><strong>Room:</strong> TBD</p>
@@ -83,7 +119,7 @@
         <p><strong>Submission Deadline:</strong> September 30, 2025 (Anywhere on Earth)</p>
         <p><strong>Author Notification:</strong> October 31, 2025</p>
         <p><strong>Camera-Ready Deadline:</strong> November 15, 2025</p>
-        <p><strong>Workshop Date:</strong> December 13 or 14, 2025</p>
+        <p><strong>Workshop Date:</strong> December 6 or 7, 2025</p>
         <p>All deadlines are at 11:59 PM Anywhere on Earth (AoE).</p>
       </div>
     </section>
